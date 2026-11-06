@@ -1,0 +1,72 @@
+{
+  "name": "dsh-onebot-personality",
+  "version": "0.1.0",
+  "private": true,
+  "description": "OneBot v11 多人格与来源受控长期记忆（默认禁用）",
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=24.9.0",
+    "dsh": "0.2.1-rc.3"
+  },
+  "packageManager": "pnpm@11.28.5",
+  "exports": {
+    ".": {
+      "types": "./dist/src/index.d.ts",
+      "default": "./dist/src/index.js"
+    },
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist/src",
+    "src",
+    "tests",
+    "scripts",
+    "docs",
+    "examples",
+    "lockfiles",
+    "locale",
+    "icon.svg",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE",
+    "tsconfig.json",
+    "pnpm-lock.yaml"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "build": "tsc",
+    "test": "pnpm run build && node --test dist/tests/*.test.js",
+    "check": "pnpm run typecheck && pnpm run test",
+    "probe:snowluma": "node scripts/probe-snowluma.mjs",
+    "verify:package": "node scripts/verify-package.mjs",
+    "check:isolated-profile": "node scripts/check-isolated-profile.mjs"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "4.0.5",
+    "@deepseek-ai/cosmokit": "1.8.6",
+    "@deepseek-ai/dsh-agent-default-model": "0.2.1-rc.3",
+    "@deepseek-ai/dsh-llm": "0.2.1-rc.3",
+    "@deepseek-ai/dsh-storage": "0.2.1-rc.3",
+    "@deepseek-ai/dsh-storage-domain": "0.2.1-rc.3",
+    "@deepseek-ai/schemastery": "3.18.5",
+    "dsh-knowledge": "0.5.2"
+  },
+  "dependencies": {
+    "ws": "8.18.3",
+    "zod": "4.4.3"
+  },
+  "devDependencies": {
+    "@deepseek-ai/dsh-storage-json": "0.2.1-rc.3",
+    "@types/node": "24.10.0",
+    "@types/ws": "8.18.1",
+    "typescript": "5.9.3"
+  }
+}

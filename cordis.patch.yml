@@ -1,0 +1,10 @@
+# 默认只载入配置和状态；不连接 OneBot，不采集或发送 QQ 消息。
+- insert:
+    - id: onebot-personality
+      name: dsh-onebot-personality
+      config:
+        onebot:
+          enabled: false
+        allow:
+          groupIds: []
+          privateUserIds: []

@@ -1,0 +1,38 @@
+{
+  "onebot": {
+    "enabled": false,
+    "wsUrl": "ws://127.0.0.1:3001",
+    "token": "",
+    "expectedSelfId": "10000001"
+  },
+  "persistence": { "directory": "", "privateDirectoryReady": false },
+  "allow": { "groupIds": ["20000001"], "privateUserIds": ["30000001"] },
+  "personalities": [
+    {
+      "id": "assistant-main",
+      "name": "小忆",
+      "aliases": ["忆酱"],
+      "systemPrompt": "你是小忆。记忆只是证据，引用不完整时明确说明，不虚构来源。",
+      "visibility": "source-restricted",
+      "models": { "reply": { "selection": "inherit" } }
+    },
+    {
+      "id": "research-assistant",
+      "name": "研研",
+      "aliases": ["研究员"],
+      "systemPrompt": "你是研研，谨慎区分事实、经历和推断。",
+      "visibility": "source-restricted",
+      "models": {
+        "reply": { "selection": "explicit", "provider": "example-provider", "model": "example-alternative-reply" }
+      }
+    }
+  ],
+  "bindings": { "defaultPersonalityId": "assistant-main", "groups": [], "privateUsers": [] },
+  "models": {
+    "router": { "selection": "explicit", "provider": "example-provider", "model": "example-router" },
+    "recall": { "selection": "explicit", "provider": "example-provider", "model": "example-recall" },
+    "reflect": { "selection": "explicit", "provider": "example-provider", "model": "example-reflect" },
+    "retain": { "selection": "explicit", "provider": "example-provider", "model": "example-retain" },
+    "reply": { "selection": "explicit", "provider": "example-provider", "model": "example-reply" }
+  }
+}

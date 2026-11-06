@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="OneBot personality memory">
+  <rect x="4" y="4" width="56" height="56" rx="16" fill="#243c62"/>
+  <path d="M17 19h30v22H32l-10 7v-7h-5z" fill="#eff8ff"/>
+  <circle cx="26" cy="29" r="3" fill="#243c62"/><circle cx="38" cy="29" r="3" fill="#243c62"/>
+  <path d="M27 36h10" stroke="#243c62" stroke-width="2" stroke-linecap="round"/>
+  <path d="M43 43h12m-6-6v12" stroke="#63d8bc" stroke-width="4" stroke-linecap="round"/>
+</svg>
